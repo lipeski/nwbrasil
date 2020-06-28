@@ -23,12 +23,14 @@
           nav
           dense
         >
-          <v-list-item link>
+          
+          <v-list-item link :to="'/'">
             <v-list-item-icon>
               <v-img src="@/assets/icons/011-fortress.png" contain width="50px" height="50px"></v-img>
             </v-list-item-icon>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
+          
           <v-list-item link>
             <v-list-item-icon>
               <v-img src="@/assets/icons/guia.png" contain width="50px" height="50px"></v-img>
