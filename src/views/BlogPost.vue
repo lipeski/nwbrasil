@@ -24,22 +24,29 @@
 </script>
 
 <template>
-  <div id="blog-post">
-    <h1>{{ post.data.title }}</h1>
-    <h4>{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
-    <div v-html="post.data.body"></div>
+  <div class="blog-post ma-4">
+    <div class="ma-6">
+      <h1>{{ post.data.title }}</h1>
+      <h4>{{ post.data.author.first_name }} {{ post.data.author.last_name }}</h4>
+      <div v-html="post.data.body"></div>
 
-    <router-link
-      v-if="post.meta.previous_post"
-      :to="/blog/ + post.meta.previous_post.slug"
-      class="button">
-      {{ post.meta.previous_post.title }}
-    </router-link>
-    <router-link
-      v-if="post.meta.next_post"
-      :to="/blog/ + post.meta.next_post.slug"
-      class="button">
-      {{ post.meta.next_post.title }}
-    </router-link>
+      <router-link
+        v-if="post.meta.previous_post"
+        :to="/blog/ + post.meta.previous_post.slug"
+        class="button">
+        {{ post.meta.previous_post.title }}
+      </router-link>
+      <router-link
+        v-if="post.meta.next_post"
+        :to="/blog/ + post.meta.next_post.slug"
+        class="button">
+        {{ post.meta.next_post.title }}
+      </router-link>
+    </div>
   </div>
 </template>
+<style lang="scss" scoped>
+    .blog-post{
+        background-color: rgba(0, 0, 0, 0.418) !important;
+    }
+</style>
