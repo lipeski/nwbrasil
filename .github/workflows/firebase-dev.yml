@@ -1,0 +1,39 @@
+name: Build and Deploy nw
+on:
+  push:
+    branches:
+      - master
+
+env:
+  FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}      
+jobs: 
+  build-deploy:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Setup node
+        uses: actions/setup-node@master
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: verify folders
+        run: |
+          cp -R dist/* public/.
+          pwd
+          echo "public"
+          ls public
+          pwd
+          echo "dist"
+          ls dist
+      - name: Deploy Firebase
+
+        uses: w9jds/firebase-action@master
+       
+        with:
+          args: deploy --only hosting
+
+  
+        
