@@ -21,6 +21,10 @@ jobs:
         run: npm run build
       - name: Deploy Firebase
         uses: w9jds/firebase-action@master
+        run: ls
+        run: pwd
+        run: ls public
+        run: ls dist
         with:
           args: deploy --only hosting
 
