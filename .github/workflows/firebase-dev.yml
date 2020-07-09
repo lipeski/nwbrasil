@@ -20,10 +20,11 @@ jobs:
       - name: Build
         run: npm run build
       - name: verify folders
-        run: ls
-        run: pwd
-        run: ls public
-        run: ls dist
+        run: |
+          ls
+          pwd
+          ls public
+          ls dist
       - name: Deploy Firebase
 
         uses: w9jds/firebase-action@master
