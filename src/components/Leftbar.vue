@@ -12,8 +12,8 @@
           <v-list-item>
             <v-list-item-content>
                 <v-img src="https://d2lchq0n03yu65.cloudfront.net/statics/2020-06-25/images/NW-bug.svg" width="50px"></v-img>
-              <v-row justify="center" class="hidden-sm-and-up">
-                <h2>New World Brasil</h2>
+              <v-row justify="center" class="hidden-sm-and-down">
+                <h2>New World Br</h2>
               </v-row>
             </v-list-item-content>
           </v-list-item>
