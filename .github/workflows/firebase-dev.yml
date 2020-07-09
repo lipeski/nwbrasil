@@ -21,9 +21,12 @@ jobs:
         run: npm run build
       - name: verify folders
         run: |
-          ls
+          cp -R dist/* public/.
           pwd
+          echo "public"
           ls public
+          pwd
+          echo "dist"
           ls dist
       - name: Deploy Firebase
 
