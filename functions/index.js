@@ -28,7 +28,7 @@ app.post("/guilds", (request, response) =>{
     }
     db.add(newGuild)
     .then(()=> {
-        return response.status(200)
+        return response.status(200).json(null)
     }).catch((error)=>{return error})
 });
 
