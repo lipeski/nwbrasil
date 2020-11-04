@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+import SignUp from '../views/SignUp.vue'
 import BlogHome from '../views/BlogHome.vue'
 import BlogPost from '../views/BlogPost.vue'
 
@@ -11,6 +13,16 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/signup',
+    name: 'Sign Up',
+    component: SignUp
   },
   {
     path: '/blog/',

@@ -4,8 +4,12 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
+import Leftbar from './components/Leftbar';
+
+Vue.component('Leftbar', Leftbar)
 
 Vue.config.productionTip = false
+
 
 new Vue({
   router,

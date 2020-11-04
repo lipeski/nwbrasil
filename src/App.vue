@@ -1,14 +1,14 @@
 <template>
   <v-app id="app">
-    <!-- <Navbar/> -->
     <v-row>
       <v-col cols="2" class="pa-0">
-        <Leftbar/>  
+        <Leftbar/>
       </v-col>
-      <v-col cols="10" class="content">
+      <v-col cols="10" class="pa-0">
         <router-view/>
       </v-col>
-    </v-row>
+    </v-row >
+   
   </v-app>
 </template>
 
@@ -22,18 +22,16 @@
 </style>
 <script>
 // import Navbar from './components/Navbar';
-import Leftbar from './components/Leftbar';
 
 export default {
   name: 'App',
 
-  components: {
-    // Navbar,
-    Leftbar
-  },
-
   data: () => ({
+    viewportWidth: window.innerWidth
     //
   }),
+  created(){
+    console.log('tamanho de tela ==', window.innerWidth)
+  }
 };
 </script>

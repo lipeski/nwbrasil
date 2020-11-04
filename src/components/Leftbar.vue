@@ -21,6 +21,7 @@
 
         <v-divider></v-divider>
         <v-list
+          class="ml-1"
           nav
           dense
         >
