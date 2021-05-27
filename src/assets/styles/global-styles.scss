@@ -15,8 +15,11 @@ $white: #fff;
 $gray: #ccc;
 $mainColor: #e83674;
 // @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&display=swap');
+.font-pica,
 h1,
-h2{
+h2,
+h3{
+  font-weight: 500;
   font-family: 'IM Fell DW Pica SC', serif !important;
 }
 
