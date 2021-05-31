@@ -62,7 +62,7 @@
   
         <v-window-item :value="3">
           <div class="pa-4 text-center">
-            <img :src="require('../assets/logo.svg')" height="80"/>
+            <img :src="require('../assets/helmet-logo.png')" height="80"/>
             <h3 class="title font-weight-light mb-2">
               Bem vindo ao New World BR
             </h3>
