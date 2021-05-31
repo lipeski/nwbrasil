@@ -2,7 +2,7 @@
     <div class="toolbar">
       <v-toolbar>
         <!-- Adjust the height to your needs, mine is 40 -->
-        <img class="mr-3" :src="require('../assets/logo.svg')" height="40"/>
+        <img class="mr-3" :src="require('../assets/helmet-logo.png')" height="80"/>
         <v-toolbar-title class="font-pica"> New world BR</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="font-pica hidden-sm-and-down">
