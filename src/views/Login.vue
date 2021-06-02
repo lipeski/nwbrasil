@@ -29,12 +29,27 @@ export default {
     }
   },
   created(){
-    console.log('uehuehe', this.$route.path)
-    if(this.$route.path === '/register'){
-      this.register = true
-    }else{
-      this.register = false
+    // console.log('uehuehe', this.$route.path)
+    // this.routePath = this.$route.path
+    // if(this.$route.path === '/register'){
+    //   this.register = true
+    // }else{
+    //   this.register = false
 
+    // }
+  },
+  computed:{
+    routePath(){
+      return this.$route.path
+    }
+  },
+  watch:{
+    routePath(){
+      if(this.$route.path === '/register'){
+        this.register = true
+      }else{
+        this.register = false
+      }
     }
   },
 }
