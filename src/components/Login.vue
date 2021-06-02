@@ -69,7 +69,8 @@ import firebase from 'firebase';
           (user) => {
             this.confirmLogin = true
             console.log(user)
-            
+            let currentUser = firebase.auth().currentUser  
+            this.$store.commit("setUser", currentUser)     
             setTimeout(() => this.confirmLogin = false, this.$router.push('/'), 3000);
             
           },

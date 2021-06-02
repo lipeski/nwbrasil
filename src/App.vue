@@ -23,7 +23,9 @@
 <script>
 
 // import Navbar from './components/Navbar';
+import firebase from 'firebase';
 import Toolbar from './components/toolbar';
+import store from './store'
 
 export default {
   name: 'App',
@@ -36,6 +38,17 @@ export default {
   data: () => ({
     //
   }),
+  created(){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        let currentUser = firebase.auth().currentUser;
+        store.commit("setUser", currentUser)
+      } else {
+        // No user is signed in.
+      }
+    });
+  }
 };
 </script>
 

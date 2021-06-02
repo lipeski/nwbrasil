@@ -62,7 +62,7 @@
   
         <v-window-item :value="3">
           <div class="pa-4 text-center">
-            <img :src="require('../assets/helmet-logo.png')" height="80"/>
+            <img :src="require('../assets/new_world_br_logo.png')" height="80"/>
             <h3 class="title font-weight-light mb-2">
               Bem vindo ao New World BR
             </h3>
@@ -161,8 +161,14 @@ import firebase from 'firebase';
       },
       signUp () {
         firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            console.log(user)
+          (res) => {
+            res.user.updateProfile({
+              displayName: this.name
+            }).then(function() {
+              // Update successful.
+            }, function() {
+              // An error happened.
+            }); 
             this.step = 3
           },
           (err) => {
