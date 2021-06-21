@@ -1,26 +1,30 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-// import axios from 'axios'
+import axios from 'axios'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user:{}
+    user:{},
+    guilds: []
   },
   mutations: {
     setUser(state, payload){
       state.user = payload
     },
+    setGuilds(state, payload){
+      state.guilds = payload
+    }
   },
   actions: {
-    // saveUser({commit}, payload){
-    //   return axios.post(`/user`, payload).then(response => {
-    //     commit('setUser', response.data)
-    //     return response.data
-    //   }).catch(() => {
-    //     return 'error'
-    //   });
-    // },
+    getGuilds({commit}){
+      return axios.get(`/guilds`).then(response => {
+        commit('setGuilds', response.data)
+        return response.data
+      }).catch(() => {
+        return 'error'
+      });
+    },
   },
   modules: {
   }

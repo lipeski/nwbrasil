@@ -22,7 +22,11 @@ import firebase from "firebase"
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
-axios.defaults.baseURL = 'https://us-central1-nwbrasil-ffb64.cloudfunctions.net/api';
+if(process.env.NODE_ENV === 'production'){
+  axios.defaults.baseURL = 'https://us-central1-nwbrasil-ffb64.cloudfunctions.net/api';
+}else{
+  axios.defaults.baseURL = 'http://localhost:5001/nwbrasil-ffb64/us-central1/api';
+}
 
 Vue.use(Vuelidate)
 Vue.config.productionTip = false

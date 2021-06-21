@@ -6,6 +6,9 @@
         <!-- <v-toolbar-title class="font-pica"> New world BR</v-toolbar-title> -->
         <v-spacer></v-spacer>
         <v-toolbar-items class="font-pica hidden-sm-and-down">
+          <div class="d-flex align-center">
+            <v-btn @click="$router.push('/guilds')" text>Guilds</v-btn>
+          </div>
           <div v-if="!isLogged" class="d-flex align-center">
             <div v-for="(item, index) in items" :key="index">
               <v-btn @click="$router.push(item.rota)" text>{{item.title}}</v-btn>
@@ -38,6 +41,9 @@
             </template>
 
             <v-list>
+              <v-list-item>
+                <v-list-item-title @click="$router.push('/guilds')">Guilds</v-list-item-title>
+              </v-list-item>
               <div v-if="!isLogged">
                 <v-list-item
                   v-for="(item, i) in items"

@@ -13,6 +13,7 @@
   #app{
     .toolbar{
       width: -webkit-fill-available;
+      flex: none;
     }
     background-image: url(assets/images/fundo.png);
     .content{
