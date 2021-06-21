@@ -6,6 +6,7 @@ import Home from '../views/Home.vue'
 import BlogHome from '../views/BlogHome.vue'
 import BlogPost from '../views/BlogPost.vue'
 import Login from '../views/Login.vue'
+import Guilds from '../views/Guilds.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,11 @@ Vue.use(VueRouter)
     path: '/register',
     name: 'Register',
     component: Login
+  },
+  {
+    path: '/guilds',
+    name: 'Guilds',
+    component: Guilds
   }
 ]
 
