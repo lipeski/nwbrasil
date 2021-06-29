@@ -19,7 +19,8 @@ export default new Vuex.Store({
   actions: {
     getGuilds({commit}){
       return axios.get(`/guilds`).then(response => {
-        commit('setGuilds', response.data)
+        let guilds = response.data
+        commit('setGuilds', guilds)
         return response.data
       }).catch(() => {
         return 'error'

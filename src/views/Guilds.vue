@@ -1,33 +1,34 @@
 <template>
     
     <v-container class="content">
-        <h3>Guilds here</h3>
+        <v-row class="justify-space-between mx-2" align="center">
+            <h3>Lista de guilds:</h3>
+            <v-btn text @click="$router.push('/guild')">+ Crie sua guild</v-btn>
+        </v-row>
         <div class="list-guilds">
-            <v-row>
-                <v-col v-for="guild in listOfGuilds" :key="guild.id">
-                    <v-card class="card">
+            <v-row class="justify-space-around">
+                <v-col v-for="guild in listOfGuilds" :key="guild.id" class="col-guild">
+                    <v-card class="card" >
                         <header class="text-md-center">{{guild.name}}</header>
                         <v-row dense justify="space-between">
-                            <v-col>
+                            <v-col cols="auto">
                                 <span>Facção: </span>
                                 <span>{{guild.faction}}</span>
                             </v-col>
-                            <v-col cols="4" class="text-right">
+                            <v-col class="text-right">
                                 <span>Focu: </span>
                                 <span>{{guild.focus}}</span>
                             </v-col>
                         </v-row>
                         <v-row dense>
-                            <v-col>
+                            <!-- <v-col>
                                 <span>Recrutando? </span>
-                                <span>
-                                    <v-icon v-if="guild.recruting" dark right>mdi-checkbox-marked-circle</v-icon>
-                                    <v-icon v-else dark right>mdi-cancel</v-icon>
-                                </span>
-                            </v-col>
-                            <v-col cols="4">
-                                <span>Tamanho:</span>
-                                <span>{{guild.size}}</span>
+                                <span v-if="guild.recruting">Sim</span>
+                                <span v-else>Não</span>
+                            </v-col> -->
+                            <v-col>
+                                <span>Servidor:</span>
+                                <span>NA</span>
                             </v-col>
                         </v-row>
                     </v-card>
@@ -71,10 +72,14 @@ export default {
     }
     .list-guilds{
         display: flex;
+        .col-guild{
+            flex-grow: unset;
+        }
     }
     .card{
-        max-width: 320px;
-        margin: auto;
-        padding: 10px;
+        min-width: 300px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 25px;
     }
 </style>
