@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <v-app id="app" :dark="true">
     <v-row class="toolbar">
       <Toolbar/>  
     </v-row>
@@ -17,7 +17,7 @@
     }
     background-image: url(assets/images/fundo.png);
     .content{
-      padding-top: 10%;
+      // padding-top: 10%;
     }
   }
 </style>
@@ -40,6 +40,7 @@ export default {
     //
   }),
   created(){
+    this.$vuetify.theme.dark = true
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.

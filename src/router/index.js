@@ -6,7 +6,9 @@ import Home from '../views/Home.vue'
 import BlogHome from '../views/BlogHome.vue'
 import BlogPost from '../views/BlogPost.vue'
 import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
 import Guilds from '../views/Guilds.vue'
+import createGuild from '../views/CreateGuild.vue'
 
 Vue.use(VueRouter)
 
@@ -36,18 +38,23 @@ Vue.use(VueRouter)
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'Login-view',
     component: Login
   },
   {
     path: '/register',
     name: 'Register',
-    component: Login
+    component: Register
   },
   {
     path: '/guilds',
     name: 'Guilds',
     component: Guilds
+  },
+  {
+    path: '/guild',
+    name: 'Criar Guild',
+    component: createGuild
   }
 ]
 

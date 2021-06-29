@@ -3,7 +3,7 @@
     <v-container>
       <v-row align="center">
         <v-col align-self="center">
-          <Login/>
+          <SignUp/>
         </v-col>
       </v-row>
     </v-container>
@@ -11,14 +11,12 @@
 </template>
 
 <script>
-import Login from '../components/Login.vue'
-
-// @ is an alias to /src
+import SignUp from '../components/SignUp.vue'
 
 export default {
-  name: 'Login-view',
+  name: 'Register',
   components: {
-    Login
+    SignUp,
   },
 }
 </script>

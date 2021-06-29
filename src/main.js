@@ -7,6 +7,9 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 import Vuelidate from 'vuelidate'
 import firebase from "firebase"
+import Vue2Editor from "vue2-editor";
+
+Vue.use(Vue2Editor);
 
   var firebaseConfig = {
     apiKey: "AIzaSyC-S4pHEZkEhHBSVRVsGrosweG6rTWvSlY",
