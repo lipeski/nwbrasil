@@ -72,7 +72,14 @@
             </v-row>
             <v-row >
                 <v-col class="description mx-3">
-                    <vue-editor id="editor" useCustomImageHandler @imageAdded="handleImageAdded" v-model="newGuild.description" />
+                    <!-- <vue-editor id="editor"
+                    useCustomImageHandler
+                    @imageAdded="handleImageAdded" v-model="editorContent">
+                    </vue-editor> -->
+                    <vue-editor id="editor" 
+                    useCustomImageHandler 
+                   @image-added="handleImageAdded" v-model="editorContent"></vue-editor>
+
                 </v-col>
                 {{newGuild.description}}
             </v-row>
@@ -82,12 +89,18 @@
     </v-container>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import {VueEditor} from 'vue2-editor'
+import firebase from 'firebase';
 
 export default {
     name: 'create-guild',
+    components: {
+        VueEditor
+    },
     data() {
         return {
+            editorContent: 'Initial Content',
             newGuild: {
                 name: '',
                 recruting: true,
@@ -115,24 +128,43 @@ export default {
     created(){
     },
     methods:{
-        handleImageAdded: function(file, Editor, cursorLocation, resetUploader) {
-            // An example of using FormData
-            // NOTE: Your key could be different such as:
-            // formData.append('file', file)
-
+        getDownloadURLImage(payload){
+            console.log(payload)
+            payload.ref.getDownloadURL().then(
+                    function(downloadURL) {
+    
+                // You get your url from here
+                    console.log('File available at', downloadURL);
+                    });
+        },
+        handleImageAdded(file, Editor, cursorLocation, resetUploader) {
+            console.log('upload img', file, Editor,cursorLocation, resetUploader)
             var formData = new FormData();
             formData.append("image", file);
+            
+            // Create a root reference
+            var storageRef = firebase.storage().ref();
 
-            axios.post('/upload', formData)
-                .then(result => {
-                let url = result.data.url; // Get url from response
-                console.log(result)
-                Editor.insertEmbed(cursorLocation, "image", url);
-                resetUploader();
-                })
-                .catch(err => {
-                console.log(err);
+            // Create a reference to 'mountains.jpg'
+            var mountainsRef = storageRef.child(file.name);
+
+            // Create a reference to 'images/mountains.jpg'
+            var mountainImagesRef = storageRef.child('uploads/'+file.name);
+
+            // While the file names are the same, the references point to different files
+            mountainsRef.name === mountainImagesRef.name            // true
+            mountainsRef.fullPath === mountainImagesRef.fullPath    // false
+            console.log(mountainsRef)
+            mountainImagesRef.put(file).then((response)=>{
+                // this.getDownloadURLImage(response)
+                response.ref.getDownloadURL().then(
+                    function(downloadURL) {
+                        // You get your url from here
+                        console.log('File available at', downloadURL);
+                        Editor.insertEmbed(cursorLocation, "image", downloadURL);
+                        resetUploader();
                 });
+            })
         }
     }
     
