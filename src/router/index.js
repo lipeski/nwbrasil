@@ -9,6 +9,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Guilds from '../views/Guilds.vue'
 import createGuild from '../views/CreateGuild.vue'
+import GuildDetail from '../views/GuildDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -55,6 +56,11 @@ Vue.use(VueRouter)
     path: '/guild',
     name: 'Criar Guild',
     component: createGuild
+  },
+  {
+    path: '/guild/:id',
+    name: 'Detalhes da guild',
+    component: GuildDetail
   }
 ]
 

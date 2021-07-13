@@ -8,7 +8,7 @@
         <div class="list-guilds">
             <v-row class="justify-space-around">
                 <v-col v-for="guild in listOfGuilds" :key="guild.id" class="col-guild">
-                    <v-card class="card" >
+                    <v-card class="card" @click="$router.push('/guild/'+guild.id)">
                         <header class="text-md-center">{{guild.name}}</header>
                         <v-row dense justify="space-between">
                             <v-col cols="auto">
