@@ -39,9 +39,9 @@ exports.ctrlGuildPost = (req, res, next) => {
                 focus: req.body.focus,
                 description: req.body.description,
                 server: req.body.server,
-                authorUID: this.uid || null
+                authorUID: this.uid
             }
-            db.add(newGuild)
+            return db.add(newGuild)
             .then((doc)=> {
                 return res.status(200).json(doc.id)
             }).catch((error)=>{return error})
@@ -74,7 +74,7 @@ exports.ctrlGuildPut = (req, res, next) => {
                     server: req.body.server,
                     authorUID: this.uid
                 }
-                db.doc(id).update(newGuild)
+                return db.doc(id).update(newGuild)
                 .then((doc)=> {
                     console.log('####################',newGuild, doc)
                     return res.status(200).json(id)
