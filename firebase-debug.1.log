@@ -1,0 +1,43 @@
+[debug] [2021-07-02T19:13:15.727Z] ----------------------------------------------------------------------
+[debug] [2021-07-02T19:13:15.729Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PICHAU\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only storage
+[debug] [2021-07-02T19:13:15.729Z] CLI Version:   9.12.0
+[debug] [2021-07-02T19:13:15.730Z] Platform:      win32
+[debug] [2021-07-02T19:13:15.730Z] Node Version:  v14.16.0
+[debug] [2021-07-02T19:13:15.730Z] Time:          Fri Jul 02 2021 16:13:15 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2021-07-02T19:13:15.731Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-02T19:13:15.737Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-02T19:13:15.737Z] > authorizing via signed-in user (felipe.getnerski@gmail.com)
+[info] i  emulators: Starting emulators: storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: storage"}}
+[warn] !  hub: emulator hub unable to start on port 4400, starting on 4401 instead. {"metadata":{"emulator":{"name":"hub"},"message":"emulator hub unable to start on port 4400, starting on 4401 instead."}}
+[debug] [2021-07-02T19:13:15.779Z] [hub] writing locator at C:\Users\PICHAU\AppData\Local\Temp\hub-nwbrasil-ffb64.json
+[debug] [2021-07-02T19:13:15.800Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-07-02T19:13:16.684Z] Temp file directory for storage emulator: C:\Users\PICHAU\AppData\Local\Temp/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: C:\\Users\\PICHAU\\AppData\\Local\\Temp/firebase/storage/blobs"}}
+[warn] !  Ruleset uses old version (version [1]). Please update to the latest version (version [2]) in C:\Users\PICHAU\Desktop\sites\nwbrasil\storage.rules:0 {"metadata":{"emulator":{"name":"storage"},"message":"Ruleset uses old version (version [1]). Please update to the latest version (version [2]) in C:\\Users\\PICHAU\\Desktop\\sites\\nwbrasil\\storage.rules:0"}}
+[warn] !  logging: Logging Emulator unable to start on port 4500, starting on 4501 instead. {"metadata":{"emulator":{"name":"logging"},"message":"Logging Emulator unable to start on port 4500, starting on 4501 instead."}}
+[warn] !  ui: Emulator UI unable to start on port 4000, starting on 4001 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4001 instead."}}
+[debug] [2021-07-02T19:13:17.765Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-07-02T19:13:17.765Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-07-02T19:13:17.765Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\PICHAU\\.cache\\firebase\\emulators\\ui-v1.5.0\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\PICHAU\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.5.0\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2021-07-02T19:13:17.877Z] Web / API server started at http://localhost:4001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4001\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4001                │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┬───────────────────────────────┐
+│ Emulator │ Host:Port      │ View in Emulator UI           │
+├──────────┼────────────────┼───────────────────────────────┤
+│ Storage  │ localhost:9199 │ http://localhost:4001/storage │
+└──────────┴────────────────┴───────────────────────────────┘
+  Emulator Hub running at localhost:4401
+  Other reserved ports: 4501
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[warn] !  Permission denied because no Storage ruleset is currently loaded, check your rules for syntax errors. {"metadata":{"emulator":{"name":"storage"},"message":"Permission denied because no Storage ruleset is currently loaded, check your rules for syntax errors."}}
+[warn] !  Permission denied because no Storage ruleset is currently loaded, check your rules for syntax errors. {"metadata":{"emulator":{"name":"storage"},"message":"Permission denied because no Storage ruleset is currently loaded, check your rules for syntax errors."}}
+[warn] !  Permission denied because no Storage ruleset is currently loaded, check your rules for syntax errors. {"metadata":{"emulator":{"name":"storage"},"message":"Permission denied because no Storage ruleset is currently loaded, check your rules for syntax errors."}}

@@ -4,13 +4,20 @@ const cors = require('cors');
 const admin = require("firebase-admin");
 admin.initializeApp();
 app.use(cors({ origin: true }));
-const db = admin.firestore().collection("guilds")
-const {ctrlGuildGetAll, ctrlGuildPost} = require('./controllerGuild');
+const {ctrlGuildGetAll, ctrlGuildPost, ctrlGuildGet, ctrlGuildPut} = require('./controllerGuild');
 const {postCtrlUser} = require('./controllerUsers');
 
 
 app.get('/guilds', 
     ctrlGuildGetAll, 
+    (req, res) => res.json(res.data)
+);
+app.get('/guild/:id', 
+    ctrlGuildGet, 
+    (req, res) => res.json(res.data)
+);
+app.put('/guild/:id', 
+    ctrlGuildPut, 
     (req, res) => res.json(res.data)
 );
 

@@ -9,6 +9,9 @@
           <div class="d-flex align-center">
             <v-btn @click="$router.push('/guilds')" text>Guilds</v-btn>
           </div>
+          <div class="d-flex align-center">
+            <span class="mx-2">|</span>
+          </div>
           <div v-if="!isLogged" class="d-flex align-center">
             <div v-for="(item, index) in items" :key="index">
               <v-btn @click="$router.push(item.rota)" text>{{item.title}}</v-btn>
@@ -16,7 +19,7 @@
           </div>
           <div v-else class="d-flex align-center">
             <v-icon>mdi-account-circle</v-icon>
-            <h2 class="ml-2">{{currentUser.displayName}}</h2>
+            <h3 class="ml-2">{{currentUser.displayName}}</h3>
             <v-btn @click="logout()" class="font-pica" text>Sair</v-btn>
 
           </div>

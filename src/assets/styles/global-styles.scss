@@ -87,3 +87,38 @@ button:disabled,
 .shadow-box {
   box-shadow: 0 11px 8px -10px $gray;
 }
+
+.theme--dark.v-text-field > .v-input__control > .v-input__slot:before,
+.v-text-field.v-input--has-state > .v-input__control > .v-input__slot:before {
+  border-color: transparent !important;
+}
+.v-text-field.v-input__control.v-input__slot:before{
+  border-color: unset!important;
+}
+.v-label{
+  left: 10px !important;
+}
+.v-label--active{
+  color:white !important;
+}
+.theme--dark.v-input input{
+  // background: #3d3d3d !important;
+  padding-left: 10px;
+}
+
+@media (min-width: 320px){
+  .is-desktop{
+    display: none;
+  }
+  .is-mobile{
+    display: block;
+  }
+}
+@media (min-width: 1024px){
+  .is-desktop{
+    display: block;
+  }
+  .is-mobile{
+    display: none;
+  }
+}
