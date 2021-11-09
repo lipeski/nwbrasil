@@ -2,10 +2,13 @@
     <div class="toolbar">
       <v-toolbar>
         <!-- Adjust the height to your needs, mine is 40 -->
-        <img class="mr-3" :src="require('../assets/new_world_br_logo.png')" height="45"/>
+        <img @click="$router.push('/')" class="mr-3 cursor-pointer" :src="require('../assets/new_world_br_logo.png')" height="45"/>
         <!-- <v-toolbar-title class="font-pica"> New world BR</v-toolbar-title> -->
         <v-spacer></v-spacer>
         <v-toolbar-items class="font-pica hidden-sm-and-down">
+          <div class="d-flex align-center">
+            <v-btn @click="$router.push('/blog')" text>Blog</v-btn>
+          </div>
           <div class="d-flex align-center">
             <v-btn @click="$router.push('/guilds')" text>Guilds</v-btn>
           </div>

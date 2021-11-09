@@ -3,6 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import axios from 'axios'
+import moment from 'moment'
 import store from './store'
 import vuetify from './plugins/vuetify';
 import Vuelidate from 'vuelidate'
@@ -30,6 +31,13 @@ if(process.env.NODE_ENV === 'production'){
 }else{
   axios.defaults.baseURL = 'http://localhost:5001/nwbrasil-ffb64/us-central1/api';
 }
+Vue.prototype.moment = moment
+
+Vue.filter('formatDate', function(value) {
+  if (value) {
+    return moment(String(value)).format('DD / MM / YYYY')
+  }
+});
 
 Vue.use(Vuelidate)
 Vue.config.productionTip = false

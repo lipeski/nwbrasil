@@ -9,6 +9,7 @@ export default new Vuex.Store({
   state: {
     user:{},
     guilds: [],
+    articles: [],
     guild: {}
   },
   mutations: {
@@ -27,11 +28,26 @@ export default new Vuex.Store({
     },
     setGuild(state, payload){
       state.guild = payload
-    }
+    },
+    setArticles(state, payload){
+      state.articles = payload
+    },
   },
   /* eslint-disable */
 
   actions: {
+    getArticles({commit}){
+      return axios.get('https://api-newworldbr.herokuapp.com/articles', {
+        headers: {
+        'Authorization': ''
+        }}).then(response => {
+        let articles = response.data
+        commit('setArticles', articles)
+        return response.data
+      }).catch(() => {
+        return 'error'
+      });
+    },
     getGuilds({commit}){
       return axios.get(`/guilds`).then(response => {
         let guilds = response.data
